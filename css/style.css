@@ -222,6 +222,30 @@ h6 {
 
 /* 4.1 General */
 
+#england {
+    background-color: #fff;
+    display: none;
+}
+
+#canada {
+    background-color: #fc0d1b;
+    display: none;
+}
+
+#tetris {
+    margin: 50px auto;
+    background-color: #bec7ba;
+    display: block;
+    /* display: none; */
+}
+
+#nextForm {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    text-align: center;
+}
+
 
 /*
 
