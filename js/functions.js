@@ -2,41 +2,170 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-function draw() {
-
-    // England's flag
-    var c = document.getElementById("england");
-    var ctx = c.getContext("2d");
-    ctx.fillStyle = "red";
-    ctx.beginPath();
-    ctx.fillRect(235, 0, 30, 300);
-    ctx.fillRect(0, 135, 500, 30);
-    ctx.closePath();
-    ctx.fill();
-
-    // Canadian flag
-    var c = document.getElementById("canada");
-    var ctx = c.getContext("2d");
-
-    // White square
-    ctx.fillStyle = "#fff";
-    ctx.beginPath();
-    ctx.fillRect(150, 0, 300, 300);
-    ctx.closePath();
-    ctx.fill();
-
-    // Maple leaf
-    ctx.fillStyle = "#fc0d1b";
-    ctx.beginPath();
-    ctx.moveTo(274, 270);
-    ctx.lineTo(276, 190);
-    ctx.lineTo(282, 190);
-    ctx.lineTo(286, 270);
-    ctx.closePath();
-    ctx.fill();
-
-}
-draw();
+var forms = [];
+const square = new Object();
+square.color = "#7fb023";
+square.pos1 = [
+    [180, 0],
+    [220, 0],
+    [180, 40],
+    [220, 40]
+];
+square.pos2 = [
+    [180, 0],
+    [220, 0],
+    [180, 40],
+    [220, 40]
+];
+square.pos3 = [
+    [180, 0],
+    [220, 0],
+    [180, 40],
+    [220, 40]
+];
+square.pos4 = [
+    [180, 0],
+    [220, 0],
+    [180, 40],
+    [220, 40]
+];
+forms.push(square);
+const line = new Object();
+line.color = "#8b4b9d";
+line.pos1 = [
+    [180, 0],
+    [180, 40],
+    [180, 80],
+    [180, 120]
+];
+line.pos2 = [
+    [260, 80],
+    [220, 80],
+    [180, 80],
+    [140, 80]
+];
+line.pos3 = [
+    [180, 0],
+    [180, 40],
+    [180, 80],
+    [180, 120]
+];
+line.pos4 = [
+    [260, 80],
+    [220, 80],
+    [180, 80],
+    [140, 80]
+];
+forms.push(line);
+const zed = new Object();
+zed.color = "#2099fc";
+zed.pos1 = [
+    [180, 0],
+    [220, 0],
+    [220, 40],
+    [260, 40]
+];
+zed.pos2 = [
+    [260, 0],
+    [260, 40],
+    [220, 40],
+    [220, 80]
+];
+zed.pos3 = [
+    [180, 0],
+    [220, 0],
+    [220, 40],
+    [260, 40]
+];
+zed.pos4 = [
+    [260, 0],
+    [260, 40],
+    [220, 40],
+    [220, 80]
+];
+forms.push(zed);
+const invZed = new Object();
+invZed.color = "#7bc5fb";
+invZed.pos1 = [
+    [220, 0],
+    [260, 0],
+    [180, 40],
+    [220, 40]
+];
+invZed.pos2 = [
+    [220, 40],
+    [220, 80],
+    [180, 0],
+    [180, 40]
+];
+invZed.pos3 = [
+    [220, 0],
+    [260, 0],
+    [180, 40],
+    [220, 40]
+];
+invZed.pos4 = [
+    [220, 40],
+    [220, 80],
+    [180, 0],
+    [180, 40]
+];
+forms.push(invZed);
+const el = new Object();
+el.color = "#a11a1e";
+el.pos1 = [
+    [180, 0],
+    [180, 40],
+    [180, 80],
+    [220, 80]
+];
+el.pos2 = [
+    [260, 40],
+    [220, 40],
+    [180, 40],
+    [180, 80]
+];
+el.pos3 = [
+    [220, 120],
+    [220, 80],
+    [220, 40],
+    [180, 40]
+];
+el.pos4 = [
+    [180, 80],
+    [220, 80],
+    [260, 80],
+    [260, 40]
+];
+forms.push(el);
+const invEl = new Object();
+invEl.color = "#ec7374";
+invEl.pos1 = [
+    [220, 0],
+    [220, 40],
+    [220, 80],
+    [180, 80]
+];
+invEl.pos2 = [
+    [260, 40],
+    [220, 40],
+    [180, 40],
+    [180, 0]
+];
+invEl.pos3 = [
+    [180, 80],
+    [180, 40],
+    [180, 0],
+    [220, 0]
+];
+invEl.pos4 = [
+    [180, 40],
+    [220, 40],
+    [260, 40],
+    [260, 80]
+]
+forms.push(invEl);
+console.log(forms[0]);
 
 function tetris() {
     // Tetris
@@ -52,83 +181,13 @@ function tetris() {
     ctx.closePath();
     ctx.fill();
 
-    let forms = [
-
-        ]
-        // Square
-    let square = new Object();
-    square.positions = [
-        [180, 0],
-        [220, 0],
-        [180, 40],
-        [220, 40]
-    ];
-    // square.posX1 = 180;
-    // square.posY1 = 0;
-    // square.posX2 = 220;
-    // square.posY2 = 0;
-    // square.posX3 = 180;
-    // square.posY3 = 40;
-    // square.posX4 = 220;
-    // square.posY4 = 40;
-    square.color = '#7fb023';
-    forms.push(square);
-    // Line
-    let line = new Object();
-    line.positions = [
-        [180, 0],
-        [180, 40],
-        [180, 80],
-        [180, 120]
-    ];
-    line.color = '#8b4b9d';
-    forms.push(line);
-    // L
-    let el = new Object();
-    el.positions = [
-        [180, 0],
-        [180, 40],
-        [180, 80],
-        [220, 80]
-    ];
-    el.color = '#a11a1e';
-    forms.push(el);
-    // Inverted L
-    let invEl = new Object();
-    invEl.positions = [
-        [220, 0],
-        [220, 40],
-        [220, 80],
-        [180, 80]
-    ];
-    invEl.color = '#ec7374';
-    forms.push(invEl);
-    // Z
-    let zed = new Object();
-    zed.positions = [
-        [180, 0],
-        [220, 0],
-        [220, 40],
-        [260, 40]
-    ];
-    zed.color = '#2099fc';
-    forms.push(zed);
-    // Inverted Z
-    let InvZed = new Object();
-    InvZed.positions = [
-        [220, 0],
-        [260, 0],
-        [180, 40],
-        [220, 40]
-    ];
-    InvZed.color = '#7bc5fb';
-    forms.push(InvZed);
-
     let fallen = [];
     let lost = false;
     let formChoice = getRandomInt(6);
+    // var formsTable = getForms()
+    // console.log(formsTable);
     nextForm(forms, formChoice);
-    let test = 0;
+    // let test = 0;
     // while (!lost) {
     // alert('test');
     fallingForm(forms, formChoice);
@@ -138,9 +197,11 @@ function tetris() {
     console.log('move');
     moveForm(forms, fallingId);
     console.log('add to fallen');
-    fallen.push(test);
-    test++;
+    // fallen.push(test);
+    // test++;
     window.addEventListener("keydown", doKeyDown, false);
+    window.setInterval(function() { moveDown(forms, fallingId); }, 500);
+    // window.setTimeout(moveDown(forms, fallingId), 5000);
     // document.onkeydown = doKeyDown;
     // moveDown(forms, fallingId);
 
@@ -189,11 +250,14 @@ function fallingForm(formsTable, index) {
 }
 
 function nextForm(formsTable, index) {
+    console.log(formsTable[0]);
     var nc = document.getElementById("nextFormCanvas");
     var nctx = nc.getContext("2d");
     // let formChoice = getRandomInt(6);
     // let fallingForm = formsTable[formChoice];
     nctx.clearRect(0, 0, 120, 160);
+    // console.log(index.color);
+    // console.log(formsTable[index.color]);
     let fallingForm = formsTable[index];
     nctx.fillStyle = fallingForm.color;
     nctx.beginPath();
@@ -308,6 +372,11 @@ function moveRight(formsTable, formId) {
         ctx.closePath();
         ctx.fill();
     }
+}
+
+function rotate(formsTable, formId) {
+    var c = document.getElementById("tetris");
+    var ctx = c.getContext("2d");
 }
 
 // window.addEventListener("keydown", doKeyDown, false);
